@@ -17,14 +17,14 @@
                FontSize="Title"/>
 
         <Frame Padding="10" BackgroundColor="{StaticResource Gray600}">
-
+            
             <VerticalStackLayout BackgroundColor="Transparent">
-
+                
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
-
+                    
                     <!-- Adults options -->
-
+                    
                     <Label Grid.Row="0" Grid.Column="0" 
                            Text="Adults"
                            TextColor="{StaticResource White}" />
@@ -41,7 +41,7 @@
                              Increment="1" />
 
                     <!-- Children options -->
-
+                    
                     <Label Grid.Row="1" Grid.Column="0" 
                            Text="Children"
                            TextColor="{StaticResource White}" />
@@ -56,31 +56,30 @@
                              Minimum="0"
                              Maximum="15"
                              Increment="1" />
-
+                    
                 </Grid>
 
                 <Label Text="Choose your suit" />
 
                 <Picker x:Name="roomPicker"
-                        Title="Choose your accommodation" 
-                        ItemDisplayBinding="{Binding Description}" />
+                        Title="Choose your accommodation" />
 
                 <Frame  BackgroundColor="{StaticResource Primary}" 
                         BorderColor="Transparent"
                         Margin="10">
-
+                    
                     <VerticalStackLayout BackgroundColor="Transparent">
-
+                        
                         <Label Text="Period of stay" 
                                FontAutoScalingEnabled="True"/>
-
+                        
                         <HorizontalStackLayout BackgroundColor="Transparent">
 
                             <Label Text="Check-in" />
-
+                            
                             <DatePicker x:Name="checkinDatePicker" 
                                         Format="dd/MM/yyyy" />
-
+                            
                         </HorizontalStackLayout>
 
                         <HorizontalStackLayout>
@@ -89,17 +88,18 @@
 
                             <DatePicker x:Name="checkoutDatePicker"
                                         Format="dd/MM/yyyy" />
-
+                            
                         </HorizontalStackLayout>
 
                         <Button Text="Next" BackgroundColor="{StaticResource Secondary}"
-                                Margin="10"
-                                Clicked="NextButton_Clicked"/>
-
+                                Margin="10"/>
+                        
                     </VerticalStackLayout>
+                    
                 </Frame>
-
+                
             </VerticalStackLayout>
+            
         </Frame>
         
     </VerticalStackLayout>
