@@ -5,10 +5,103 @@
              Title="Hiring Accommodation"
              NavigationPage.HasNavigationBar="False"
              BackgroundColor="{StaticResource OffBlack}">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
+    
+    <VerticalStackLayout VerticalOptions="CenterAndExpand"
+                         Padding="10">
+        
+        <Label Text="Daily rate calculation" 
+               TextColor="{StaticResource White}"
+               FontFamily="Kalam"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               FontSize="Title"/>
+
+        <Frame Padding="10" BackgroundColor="{StaticResource Gray600}">
+            
+            <VerticalStackLayout BackgroundColor="Transparent">
+                
+                <Grid RowDefinitions="Auto, Auto"
+                      ColumnDefinitions="*, *, 2*">
+                    
+                    <!-- Adults options -->
+                    
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="Adults"
+                           TextColor="{StaticResource White}" />
+
+                    <Label Grid.Row="0" Grid.Column="1" 
+                           Text="{Binding Value}"
+                           TextColor="{StaticResource White}" 
+                           BindingContext="{x:Reference adultsStepper}"/>
+
+                    <Stepper Grid.Row="0" Grid.Column="2"
+                             x:Name="adultsStepper"
+                             Minimum="0"
+                             Maximum="20"
+                             Increment="1" />
+
+                    <!-- Children options -->
+                    
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="Children"
+                           TextColor="{StaticResource White}" />
+
+                    <Label Grid.Row="1" Grid.Column="1" 
+                           Text="{Binding Value}"
+                           TextColor="{StaticResource White}" 
+                           BindingContext="{x:Reference childrenStepper}"/>
+
+                    <Stepper Grid.Row="1" Grid.Column="2"
+                             x:Name="childrenStepper"
+                             Minimum="0"
+                             Maximum="15"
+                             Increment="1" />
+                    
+                </Grid>
+
+                <Label Text="Choose your suit" />
+
+                <Picker x:Name="roomPicker"
+                        Title="Choose your accommodation" />
+
+                <Frame  BackgroundColor="{StaticResource Primary}" 
+                        BorderColor="Transparent"
+                        Margin="10">
+                    
+                    <VerticalStackLayout BackgroundColor="Transparent">
+                        
+                        <Label Text="Period of stay" 
+                               FontAutoScalingEnabled="True"/>
+                        
+                        <HorizontalStackLayout BackgroundColor="Transparent">
+
+                            <Label Text="Check-in" />
+                            
+                            <DatePicker x:Name="checkinDatePicker" 
+                                        Format="dd/MM/yyyy" />
+                            
+                        </HorizontalStackLayout>
+
+                        <HorizontalStackLayout>
+
+                            <Label Text="Check-out" />
+
+                            <DatePicker x:Name="checkoutDatePicker"
+                                        Format="dd/MM/yyyy" />
+                            
+                        </HorizontalStackLayout>
+
+                        <Button Text="Next" BackgroundColor="{StaticResource Secondary}"
+                                Margin="10"/>
+                        
+                    </VerticalStackLayout>
+                    
+                </Frame>
+                
+            </VerticalStackLayout>
+            
+        </Frame>
+        
     </VerticalStackLayout>
+    
 </ContentPage>
