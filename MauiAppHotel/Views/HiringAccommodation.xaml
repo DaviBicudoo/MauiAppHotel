@@ -79,7 +79,8 @@
                             <Label Text="Check-in" />
 
                             <DatePicker x:Name="checkinDatePicker" 
-                                        Format="dd/MM/yyyy" />
+                                        Format="dd/MM/yyyy" 
+                                        DateSelected="checkinDatePicker_DateSelected"/>
 
                         </HorizontalStackLayout>
 
