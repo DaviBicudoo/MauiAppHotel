@@ -59,7 +59,7 @@
 
                 </Grid>
 
-                <Label Text="Choose your suit" />
+                <Label Text="Choose your suit " />
 
                 <Picker x:Name="roomPicker"
                         Title="Choose your accommodation" 
