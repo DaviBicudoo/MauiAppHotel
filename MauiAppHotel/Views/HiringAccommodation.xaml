@@ -11,70 +11,92 @@
         
         <Label Text="Daily rate calculation" 
                TextColor="{StaticResource White}"
-               FontFamily="Kalam"
+               FontFamily=""
                VerticalOptions="Center"
                HorizontalOptions="Center"
                FontSize="Title"/>
 
         <Frame Padding="10" BackgroundColor="{StaticResource Gray600}">
 
-            <VerticalStackLayout BackgroundColor="Transparent">
+            <VerticalStackLayout BackgroundColor="Transparent" VerticalOptions="Center">
 
                 <Grid RowDefinitions="Auto, Auto"
-                      ColumnDefinitions="*, *, 2*">
+                      ColumnDefinitions="*, *, 2*"
+                      HorizontalOptions="CenterAndExpand">
 
                     <!-- Adults options -->
 
                     <Label Grid.Row="0" Grid.Column="0" 
                            Text="Adults"
-                           TextColor="{StaticResource White}" />
+                           TextColor="{StaticResource White}"
+                           Margin="5"/>
 
                     <Label Grid.Row="0" Grid.Column="1" 
                            Text="{Binding Value}"
-                           TextColor="{StaticResource White}" 
-                           BindingContext="{x:Reference adultsStepper}"/>
+                           TextColor="{StaticResource PrimaryDark}" 
+                           BindingContext="{x:Reference adultsStepper}"
+                           Margin="5"/>
 
                     <Stepper Grid.Row="0" Grid.Column="2"
                              x:Name="adultsStepper"
                              Minimum="0"
                              Maximum="20"
-                             Increment="1" />
+                             Increment="1" 
+                             Margin="5"/>
 
                     <!-- Children options -->
 
                     <Label Grid.Row="1" Grid.Column="0" 
                            Text="Children"
-                           TextColor="{StaticResource White}" />
+                           TextColor="{StaticResource White}" 
+                           Margin="5"/>
 
                     <Label Grid.Row="1" Grid.Column="1" 
                            Text="{Binding Value}"
-                           TextColor="{StaticResource White}" 
-                           BindingContext="{x:Reference childrenStepper}"/>
+                           TextColor="{StaticResource PrimaryDark}" 
+                           BindingContext="{x:Reference childrenStepper}"
+                           Margin="5"/>
 
                     <Stepper Grid.Row="1" Grid.Column="2"
                              x:Name="childrenStepper"
                              Minimum="0"
                              Maximum="15"
-                             Increment="1" />
+                             Increment="1" 
+                             Margin="5"/>
 
                 </Grid>
 
-                <Label Text="Choose your suit" />
+                <Frame Padding="10"
+                       Margin="10"
+                       BackgroundColor="Transparent"
+                       BorderColor="Transparent">
 
-                <Picker x:Name="roomPicker"
-                        Title="Choose your accommodation" 
-                        ItemDisplayBinding="{Binding Description}" />
+                    <VerticalStackLayout>
+                        <Label Text="Choose your suit" 
+                               TextColor="White"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"/>
+
+                        <Picker x:Name="roomPicker"
+                                Title="Choose your accommodation" 
+                                ItemDisplayBinding="{Binding Description}" />
+                    </VerticalStackLayout>
+                </Frame>
 
                 <Frame  BackgroundColor="{StaticResource Primary}" 
                         BorderColor="Transparent"
                         Margin="10">
 
-                    <VerticalStackLayout BackgroundColor="Transparent">
+                    <VerticalStackLayout BackgroundColor="Transparent" Spacing="10">
 
                         <Label Text="Period of stay" 
-                               FontAutoScalingEnabled="True"/>
+                               TextColor="{StaticResource White}"
+                               FontAutoScalingEnabled="True"
+                               TextTransform="Uppercase"
+                               FontSize="Subtitle"/>
 
-                        <HorizontalStackLayout BackgroundColor="Transparent">
+                        <HorizontalStackLayout BackgroundColor="Transparent"
+                                               HorizontalOptions="CenterAndExpand">
 
                             <Label Text="Check-in" />
 
@@ -84,7 +106,7 @@
 
                         </HorizontalStackLayout>
 
-                        <HorizontalStackLayout>
+                        <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
 
                             <Label Text="Check-out" />
 

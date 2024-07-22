@@ -14,21 +14,21 @@
                HorizontalTextAlignment="Center" />
 
         <Frame Margin="10">
-            <HorizontalStackLayout>
-                <HorizontalStackLayout>
+            <StackLayout Orientation="Horizontal">
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                     <Label Text="Adults" 
                            TextColor="White"/>
                     <Label Text="{Binding NumberOfAdults}" 
                            TextColor="{StaticResource Primary}" />
                 </HorizontalStackLayout>
 
-                <HorizontalStackLayout>
+                <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                     <Label Text="Children" />
                     <Label Text="{Binding NumberOfChildren}"
                            TextColor="{StaticResource Primary}" />
 
                 </HorizontalStackLayout>
-            </HorizontalStackLayout>
+            </StackLayout>
         </Frame>
 
         <Frame Margin="10">
@@ -49,7 +49,7 @@
         </Frame>
 
         <Frame Margin="10">
-            <HorizontalStackLayout>
+            <HorizontalStackLayout HorizontalOptions="CenterAndExpand">
                 <Label Text="Total value" />
                 <Label Text="{Binding TotalValue, StringFormat='{}{0:c}'}" 
                        TextColor="{StaticResource Primary}"/>
