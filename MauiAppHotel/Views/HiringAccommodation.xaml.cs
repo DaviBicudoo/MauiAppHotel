@@ -42,7 +42,7 @@ public partial class HiringAccommodation : ContentPage
 
 		} catch(Exception ex)
 		{
-			DisplayAlert("Ops!", ex.Message, "OK");
+			await DisplayAlert("Ops!", ex.Message, "OK");
 		}
     }
 

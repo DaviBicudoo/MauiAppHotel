@@ -8,7 +8,7 @@
     
     <VerticalStackLayout VerticalOptions="CenterAndExpand">
 
-        <Label Text="Super deluxe suit" 
+        <Label Text="{Binding SelectedRoom.Description}" 
                TextColor="{StaticResource White}"
                FontSize="Title"
                HorizontalTextAlignment="Center" />
@@ -18,13 +18,13 @@
                 <HorizontalStackLayout>
                     <Label Text="Adults" 
                            TextColor="White"/>
-                    <Label Text="2" 
+                    <Label Text="{Binding NumberOfAdults}" 
                            TextColor="{StaticResource Primary}" />
                 </HorizontalStackLayout>
 
                 <HorizontalStackLayout>
                     <Label Text="Children" />
-                    <Label Text="1"
+                    <Label Text="{Binding NumberOfChildren}"
                            TextColor="{StaticResource Primary}" />
 
                 </HorizontalStackLayout>
@@ -38,9 +38,9 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out" />
                 <Label Grid.Row="0" Grid.Column="2" Text="Accommodation time" />
                 
-                <Label Grid.Row="1" Grid.Column="0" Text="dd/MM/yyyy" />
-                <Label Grid.Row="1" Grid.Column="1" Text="dd/MM/yyyy" />
-                <Label Grid.Row="1" Grid.Column="2" Text="x" />
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding CheckInDate}" />
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding CheckOutDate}" />
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding TimeOfStay}" />
                 
             </Grid>
         </Frame>
@@ -48,7 +48,8 @@
         <Frame Margin="10">
             <HorizontalStackLayout>
                 <Label Text="Total value" />
-                <Label Text="R$1000,00" />
+                <Label Text=" R$ " />
+                <Label Text="{Binding TotalValue}" />
             </HorizontalStackLayout>
         </Frame>
 
