@@ -38,9 +38,12 @@
                 <Label Grid.Row="0" Grid.Column="1" Text="Check-out" />
                 <Label Grid.Row="0" Grid.Column="2" Text="Accommodation time" />
                 
-                <Label Grid.Row="1" Grid.Column="0" Text="{Binding CheckInDate}" />
-                <Label Grid.Row="1" Grid.Column="1" Text="{Binding CheckOutDate}" />
-                <Label Grid.Row="1" Grid.Column="2" Text="{Binding TimeOfStay}" />
+                <Label Grid.Row="1" Grid.Column="0" Text="{Binding CheckInDate, StringFormat='{}{0:dd/MM/yyyy}'}"
+                       TextColor="{StaticResource Primary}"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding CheckOutDate, StringFormat='{}{0:dd/MM/yyyy}'}" 
+                       TextColor="{StaticResource Primary}"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="{Binding TimeOfStay}"
+                       TextColor="{StaticResource Primary}"/>
                 
             </Grid>
         </Frame>
@@ -48,8 +51,8 @@
         <Frame Margin="10">
             <HorizontalStackLayout>
                 <Label Text="Total value" />
-                <Label Text=" R$ " />
-                <Label Text="{Binding TotalValue}" />
+                <Label Text="{Binding TotalValue, StringFormat='{}{0:c}'}" 
+                       TextColor="{StaticResource Primary}"/>
             </HorizontalStackLayout>
         </Frame>
 
