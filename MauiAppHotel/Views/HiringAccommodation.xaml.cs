@@ -1,3 +1,5 @@
+using MauiAppHotel.Models;
+
 namespace MauiAppHotel.Views;
 
 public partial class HiringAccommodation : ContentPage
@@ -18,11 +20,25 @@ public partial class HiringAccommodation : ContentPage
 		checkoutDatePicker.MaximumDate = checkinDatePicker.Date.AddMonths(1);
 	}
 
-    private void NextButton_Clicked(object sender, EventArgs e)
+    private async void NextButton_Clicked(object sender, EventArgs e)
     {
 		try
 		{
-			Navigation.PushAsync(new HiredAccommodation());
+			Accommodation accommodation = new Accommodation
+			{
+				SelectedRoom = (Room)roomPicker.SelectedItem,
+				NumberOfAdults = Convert.ToInt32(adultsStepper.Value),
+				NumberOfChildren = Convert.ToInt32(childrenStepper.Value),
+				CheckInDate = checkinDatePicker.Date,
+				CheckOutDate = checkoutDatePicker.Date // Se não funcionar, coloque vírgula no fim desta linha!!!
+			};
+
+
+			await Navigation.PushAsync(new HiredAccommodation()
+			{
+				BindingContext = accommodation
+			});
+			
 
 		} catch(Exception ex)
 		{
